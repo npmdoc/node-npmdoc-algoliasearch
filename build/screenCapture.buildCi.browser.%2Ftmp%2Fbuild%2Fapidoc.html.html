@@ -1,0 +1,4569 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/algolia/algoliasearch-client-js">algoliasearch (v3.22.1)</a>
+</h1>
+<h4>AlgoliaSearch API JavaScript client</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch">module algoliasearch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.algoliasearch">
+            function <span class="apidocSignatureSpan"></span>algoliasearch
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearchCore
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>IndexBrowser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>IndexCore
+            <span class="apidocSignatureSpan">(algoliasearch, indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.initPlaces">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>initPlaces
+            <span class="apidocSignatureSpan">(appID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.lite">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>lite
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.toString">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearch.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearchCore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>IndexBrowser.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>IndexCore.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.</span>store</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">algoliasearch.</span>ua</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">algoliasearch.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.AlgoliaSearch">module algoliasearch.AlgoliaSearch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.AlgoliaSearch">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.super_">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.</span>super_
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.AlgoliaSearch.prototype">module algoliasearch.AlgoliaSearch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addApiKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addApiKey
+            <span class="apidocSignatureSpan">(acls, params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addQueryInBatch">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addQueryInBatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addUserKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKeyWithValidity">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addUserKeyWithValidity
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.batch">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>batch
+            <span class="apidocSignatureSpan">(operations, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.copyIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>copyIndex
+            <span class="apidocSignatureSpan">(srcIndexName, dstIndexName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteApiKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteApiKey
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteIndex
+            <span class="apidocSignatureSpan">(indexName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteUserKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteUserKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.destroy">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>destroy
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableRateLimitForward">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>disableRateLimitForward
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableSecuredAPIKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>disableSecuredAPIKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.enableRateLimitForward">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>enableRateLimitForward
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.generateSecuredApiKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>generateSecuredApiKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getApiKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getApiKey
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getLogs">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getLogs
+            <span class="apidocSignatureSpan">(offset, length, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getUserKeyACL">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getUserKeyACL
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.initIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>initIndex
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listApiKeys">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listApiKeys
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listIndexes">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listIndexes
+            <span class="apidocSignatureSpan">(page, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listUserKeys">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listUserKeys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.moveIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>moveIndex
+            <span class="apidocSignatureSpan">(srcIndexName, dstIndexName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.sendQueriesBatch">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>sendQueriesBatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.startQueriesBatch">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>startQueriesBatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateApiKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>updateApiKey
+            <span class="apidocSignatureSpan">(key, acls, params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateUserKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>updateUserKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.useSecuredAPIKey">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>useSecuredAPIKey
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.AlgoliaSearchCore">module algoliasearch.AlgoliaSearchCore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.AlgoliaSearchCore">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearchCore
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.AlgoliaSearchCore.prototype">module algoliasearch.AlgoliaSearchCore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._cacheAppIdData">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_cacheAppIdData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._checkAppIdData">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_checkAppIdData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._computeRequestHeaders">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_computeRequestHeaders
+            <span class="apidocSignatureSpan">(additionalUA, withAPIKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getAppIdData">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getAppIdData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostByType">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getHostByType
+            <span class="apidocSignatureSpan">(hostType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostIndexByType">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getHostIndexByType
+            <span class="apidocSignatureSpan">(hostType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getSearchParams">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getSearchParams
+            <span class="apidocSignatureSpan">(args, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutMultiplier">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getTimeoutMultiplier
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutsForRequest">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getTimeoutsForRequest
+            <span class="apidocSignatureSpan">(hostType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementHostIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_incrementHostIndex
+            <span class="apidocSignatureSpan">(hostType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementTimeoutMultipler">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_incrementTimeoutMultipler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._jsonRequest">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_jsonRequest
+            <span class="apidocSignatureSpan">(initialOpts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._partialAppIdDataUpdate">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_partialAppIdDataUpdate
+            <span class="apidocSignatureSpan">(newData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._resetInitialAppIdData">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_resetInitialAppIdData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setAppIdData">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_setAppIdData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setHostIndexByType">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_setHostIndexByType
+            <span class="apidocSignatureSpan">(hostIndex, hostType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.addAlgoliaAgent">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>addAlgoliaAgent
+            <span class="apidocSignatureSpan">(algoliaAgent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.clearCache">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>clearCache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.getTimeouts">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>getTimeouts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.initIndex">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>initIndex
+            <span class="apidocSignatureSpan">(indexName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.search">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>search
+            <span class="apidocSignatureSpan">(queries, opts, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setExtraHeader">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setExtraHeader
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setRequestTimeout">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setRequestTimeout
+            <span class="apidocSignatureSpan">(milliseconds)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setSecurityTags">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setSecurityTags
+            <span class="apidocSignatureSpan">(tags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setTimeouts">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setTimeouts
+            <span class="apidocSignatureSpan">(timeouts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setUserToken">
+            function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setUserToken
+            <span class="apidocSignatureSpan">(userToken)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.IndexBrowser">module algoliasearch.IndexBrowser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.IndexBrowser">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>IndexBrowser
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.super_">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.IndexBrowser.prototype">module algoliasearch.IndexBrowser.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.prototype._clean">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_clean
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.prototype._end">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.prototype._error">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_error
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.prototype._result">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_result
+            <span class="apidocSignatureSpan">(content)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexBrowser.prototype.stop">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>stop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.IndexCore">module algoliasearch.IndexCore</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.IndexCore">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>IndexCore
+            <span class="apidocSignatureSpan">(algoliasearch, indexName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.IndexCore.prototype">module algoliasearch.IndexCore.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype._search">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>_search
+            <span class="apidocSignatureSpan">(params, url, callback, additionalUA)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.browse">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>browse
+            <span class="apidocSignatureSpan">(query, queryParameters, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.browseFrom">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>browseFrom
+            <span class="apidocSignatureSpan">(cursor, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.clearCache">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>clearCache
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.getObject">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>getObject
+            <span class="apidocSignatureSpan">(objectID, attrs, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.getObjects">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>getObjects
+            <span class="apidocSignatureSpan">(objectIDs, attributesToRetrieve, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.search">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>search
+            <span class="apidocSignatureSpan">(query, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.searchFacet">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>searchFacet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.searchForFacetValues">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>searchForFacetValues
+            <span class="apidocSignatureSpan">(params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.IndexCore.prototype.similarSearch">
+            function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>similarSearch
+            <span class="apidocSignatureSpan">(query, args, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>as</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>indexName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>typeAheadArgs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>typeAheadValueOption</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.errors">module algoliasearch.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.AlgoliaSearchError">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>AlgoliaSearchError
+            <span class="apidocSignatureSpan">(message, extraProperties)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.JSONPScriptError">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>JSONPScriptError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.JSONPScriptFail">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>JSONPScriptFail
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.Network">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>Network
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.RequestTimeout">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>RequestTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.Unknown">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>Unknown
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.errors.UnparsableJSON">
+            function <span class="apidocSignatureSpan">algoliasearch.errors.</span>UnparsableJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.lite">module algoliasearch.lite</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.lite.lite">
+            function <span class="apidocSignatureSpan">algoliasearch.</span>lite
+            <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.lite.initPlaces">
+            function <span class="apidocSignatureSpan">algoliasearch.lite.</span>initPlaces
+            <span class="apidocSignatureSpan">(appID, apiKey, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">algoliasearch.lite.</span>ua</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">algoliasearch.lite.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.algoliasearch.store">module algoliasearch.store</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.store.get">
+            function <span class="apidocSignatureSpan">algoliasearch.store.</span>get
+            <span class="apidocSignatureSpan">(key, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.store.set">
+            function <span class="apidocSignatureSpan">algoliasearch.store.</span>set
+            <span class="apidocSignatureSpan">(key, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.algoliasearch.store.supportsLocalStorage">
+            function <span class="apidocSignatureSpan">algoliasearch.store.</span>supportsLocalStorage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch" id="apidoc.module.algoliasearch">module algoliasearch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.algoliasearch" id="apidoc.element.algoliasearch.algoliasearch">
+        function <span class="apidocSignatureSpan"></span>algoliasearch
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function algoliasearch(applicationID, apiKey, opts) {
+  var cloneDeep = require('../../clone.js');
+  var reduce = require('reduce');
+
+  if (!opts) {
+    opts = {};
+  }
+
+  var httpAgent = opts.httpAgent;
+
+  opts = cloneDeep(reduce(opts, allButHttpAgent, {}));
+
+  // as an httpAgent is an object with methods etc, we take a reference to
+  // it rather than cloning it like other values
+  function allButHttpAgent(filteredOpts, val, keyName) {
+    if (keyName !== 'httpAgent') {
+      filteredOpts[keyName] = val;
+    }
+
+    return filteredOpts;
+  }
+
+  opts.httpAgent = httpAgent;
+
+  opts.timeouts = opts.timeouts || {
+    connect: 2 * 1000,
+    read: 5 * 1000,
+    write: 30 * 1000
+  };
+
+  if (opts.protocol === undefined) {
+    opts.protocol = 'https:';
+  }
+
+  opts._ua = opts._ua || algoliasearch.ua;
+  opts._useCache = false;
+
+  return new AlgoliaSearchNodeJS(applicationID, apiKey, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch" id="apidoc.element.algoliasearch.AlgoliaSearch">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearch() {
+  AlgoliaSearchCore.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore" id="apidoc.element.algoliasearch.AlgoliaSearchCore">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearchCore
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCore(applicationID, apiKey, opts) {
+  var debug = require('debug')('algoliasearch');
+
+  var clone = require('./clone.js');
+  var isArray = require('isarray');
+  var map = require('./map.js');
+
+  var usage = 'Usage: algoliasearch(applicationID, apiKey, opts)';
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !applicationID) {
+    throw new errors.AlgoliaSearchError('Please provide an application ID. ' + usage);
+  }
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !apiKey) {
+    throw new errors.AlgoliaSearchError('Please provide an API key. ' + usage);
+  }
+
+  this.applicationID = applicationID;
+  this.apiKey = apiKey;
+
+  this.hosts = {
+    read: [],
+    write: []
+  };
+
+  opts = opts || {};
+
+  var protocol = opts.protocol || 'https:';
+  this._timeouts = opts.timeouts || {
+    connect: 1 * 1000, // 500ms connect is GPRS latency
+    read: 2 * 1000,
+    write: 30 * 1000
+  };
+
+  // backward compat, if opts.timeout is passed, we use it to configure all timeouts like before
+  if (opts.timeout) {
+    this._timeouts.connect = this._timeouts.read = this._timeouts.write = opts.timeout;
+  }
+
+  // while we advocate for colon-at-the-end values: 'http:' for `opts.protocol`
+  // we also accept `http` and `https`. It's a common error.
+  if (!/:$/.test(protocol)) {
+    protocol = protocol + ':';
+  }
+
+  if (opts.protocol !== 'http:' &amp;&amp; opts.protocol !== 'https:') {
+    throw new errors.AlgoliaSearchError('protocol must be `http:` or `https:` (was `' + opts.protocol + '`)');
+  }
+
+  this._checkAppIdData();
+
+  if (!opts.hosts) {
+    var defaultHosts = map(this._shuffleResult, function(hostNumber) {
+      return applicationID + '-' + hostNumber + '.algolianet.com';
+    });
+
+    // no hosts given, compute defaults
+    this.hosts.read = [this.applicationID + '-dsn.algolia.net'].concat(defaultHosts);
+    this.hosts.write = [this.applicationID + '.algolia.net'].concat(defaultHosts);
+  } else if (isArray(opts.hosts)) {
+    // when passing custom hosts, we need to have a different host index if the number
+    // of write/read hosts are different.
+    this.hosts.read = clone(opts.hosts);
+    this.hosts.write = clone(opts.hosts);
+  } else {
+    this.hosts.read = clone(opts.hosts.read);
+    this.hosts.write = clone(opts.hosts.write);
+  }
+
+  // add protocol and lowercase hosts
+  this.hosts.read = map(this.hosts.read, prepareHost(protocol));
+  this.hosts.write = map(this.hosts.write, prepareHost(protocol));
+
+  this.extraHeaders = [];
+
+  // In some situations you might want to warm the cache
+  this.cache = opts._cache || {};
+
+  this._ua = opts._ua;
+  this._useCache = opts._useCache === undefined || opts._cache ? true : opts._useCache;
+  this._useFallback = opts.useFallback === undefined ? true : opts.useFallback;
+
+  this._setTimeout = opts._setTimeout;
+
+  debug('init done, %j', this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser" id="apidoc.element.algoliasearch.IndexBrowser">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>IndexBrowser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexBrowser() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore" id="apidoc.element.algoliasearch.IndexCore">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>IndexCore
+        <span class="apidocSignatureSpan">(algoliasearch, indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexCore(algoliasearch, indexName) {
+  this.indexName = indexName;
+  this.as = algoliasearch;
+  this.typeAheadArgs = null;
+  this.typeAheadValueOption = null;
+
+  // make sure every index instance has it's own cache
+  this.cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.initPlaces" id="apidoc.element.algoliasearch.initPlaces">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>initPlaces
+        <span class="apidocSignatureSpan">(appID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function places(appID, apiKey, opts) {
+  var cloneDeep = require('./clone.js');
+
+  opts = opts &amp;&amp; cloneDeep(opts) || {};
+  opts.hosts = opts.hosts || [
+    'places-dsn.algolia.net',
+    'places-1.algolianet.com',
+    'places-2.algolianet.com',
+    'places-3.algolianet.com'
+  ];
+
+  // allow initPlaces() no arguments =&gt; community rate limited
+  if (arguments.length === 0 || typeof appID === 'object' || appID === undefined) {
+    appID = '';
+    apiKey = '';
+    opts._allowEmptyCredentials = true;
+  }
+
+  var client = algoliasearch(appID, apiKey, opts);
+  var index = client.initIndex('places');
+  index.search = buildSearchMethod('query', '/1/places/query');
+  return index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.lite" id="apidoc.element.algoliasearch.lite">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>lite
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function algoliasearch(applicationID, apiKey, opts) {
+  var cloneDeep = require('../../clone.js');
+  var reduce = require('reduce');
+
+  if (!opts) {
+    opts = {};
+  }
+
+  var httpAgent = opts.httpAgent;
+
+  opts = cloneDeep(reduce(opts, allButHttpAgent, {}));
+
+  // as an httpAgent is an object with methods etc, we take a reference to
+  // it rather than cloning it like other values
+  function allButHttpAgent(filteredOpts, val, keyName) {
+    if (keyName !== 'httpAgent') {
+      filteredOpts[keyName] = val;
+    }
+
+    return filteredOpts;
+  }
+
+  opts.httpAgent = httpAgent;
+
+  opts.timeouts = opts.timeouts || {
+    connect: 2 * 1000,
+    read: 5 * 1000,
+    write: 30 * 1000
+  };
+
+  if (opts.protocol === undefined) {
+    opts.protocol = 'https:';
+  }
+
+  opts._ua = opts._ua || algoliasearch.ua;
+  opts._useCache = false;
+
+  return new AlgoliaSearchNodeJS(applicationID, apiKey, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.toString" id="apidoc.element.algoliasearch.toString">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.AlgoliaSearch" id="apidoc.module.algoliasearch.AlgoliaSearch">module algoliasearch.AlgoliaSearch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.AlgoliaSearch" id="apidoc.element.algoliasearch.AlgoliaSearch.AlgoliaSearch">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearch() {
+  AlgoliaSearchCore.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.super_" id="apidoc.element.algoliasearch.AlgoliaSearch.super_">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.</span>super_
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCore(applicationID, apiKey, opts) {
+  var debug = require('debug')('algoliasearch');
+
+  var clone = require('./clone.js');
+  var isArray = require('isarray');
+  var map = require('./map.js');
+
+  var usage = 'Usage: algoliasearch(applicationID, apiKey, opts)';
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !applicationID) {
+    throw new errors.AlgoliaSearchError('Please provide an application ID. ' + usage);
+  }
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !apiKey) {
+    throw new errors.AlgoliaSearchError('Please provide an API key. ' + usage);
+  }
+
+  this.applicationID = applicationID;
+  this.apiKey = apiKey;
+
+  this.hosts = {
+    read: [],
+    write: []
+  };
+
+  opts = opts || {};
+
+  var protocol = opts.protocol || 'https:';
+  this._timeouts = opts.timeouts || {
+    connect: 1 * 1000, // 500ms connect is GPRS latency
+    read: 2 * 1000,
+    write: 30 * 1000
+  };
+
+  // backward compat, if opts.timeout is passed, we use it to configure all timeouts like before
+  if (opts.timeout) {
+    this._timeouts.connect = this._timeouts.read = this._timeouts.write = opts.timeout;
+  }
+
+  // while we advocate for colon-at-the-end values: 'http:' for `opts.protocol`
+  // we also accept `http` and `https`. It's a common error.
+  if (!/:$/.test(protocol)) {
+    protocol = protocol + ':';
+  }
+
+  if (opts.protocol !== 'http:' &amp;&amp; opts.protocol !== 'https:') {
+    throw new errors.AlgoliaSearchError('protocol must be `http:` or `https:` (was `' + opts.protocol + '`)');
+  }
+
+  this._checkAppIdData();
+
+  if (!opts.hosts) {
+    var defaultHosts = map(this._shuffleResult, function(hostNumber) {
+      return applicationID + '-' + hostNumber + '.algolianet.com';
+    });
+
+    // no hosts given, compute defaults
+    this.hosts.read = [this.applicationID + '-dsn.algolia.net'].concat(defaultHosts);
+    this.hosts.write = [this.applicationID + '.algolia.net'].concat(defaultHosts);
+  } else if (isArray(opts.hosts)) {
+    // when passing custom hosts, we need to have a different host index if the number
+    // of write/read hosts are different.
+    this.hosts.read = clone(opts.hosts);
+    this.hosts.write = clone(opts.hosts);
+  } else {
+    this.hosts.read = clone(opts.hosts.read);
+    this.hosts.write = clone(opts.hosts.write);
+  }
+
+  // add protocol and lowercase hosts
+  this.hosts.read = map(this.hosts.read, prepareHost(protocol));
+  this.hosts.write = map(this.hosts.write, prepareHost(protocol));
+
+  this.extraHeaders = [];
+
+  // In some situations you might want to warm the cache
+  this.cache = opts._cache || {};
+
+  this._ua = opts._ua;
+  this._useCache = opts._useCache === undefined || opts._cache ? true : opts._useCache;
+  this._useFallback = opts.useFallback === undefined ? true : opts.useFallback;
+
+  this._setTimeout = opts._setTimeout;
+
+  debug('init done, %j', this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.AlgoliaSearch.prototype" id="apidoc.module.algoliasearch.AlgoliaSearch.prototype">module algoliasearch.AlgoliaSearch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addApiKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.addApiKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addApiKey
+        <span class="apidocSignatureSpan">(acls, params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addApiKey = function (acls, params, callback) {
+  var isArray = require('isarray');
+  var usage = 'Usage: client.addApiKey(arrayOfAcls[, params, callback])';
+
+  if (!isArray(acls)) {
+    throw new Error(usage);
+  }
+
+  if (arguments.length === 1 || typeof params === 'function') {
+    callback = params;
+    params = null;
+  }
+
+  var postObj = {
+    acl: acls
+  };
+
+  if (params) {
+    postObj.validity = params.validity;
+    postObj.maxQueriesPerIPPerHour = params.maxQueriesPerIPPerHour;
+    postObj.maxHitsPerQuery = params.maxHitsPerQuery;
+    postObj.indexes = params.indexes;
+    postObj.description = params.description;
+
+    if (params.queryParameters) {
+      postObj.queryParameters = this._getSearchParams(params.queryParameters, '');
+    }
+
+    postObj.referers = params.referers;
+  }
+
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/keys',
+    body: postObj,
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ });
+};
+
+/*
+@deprecated see client.addApiKey
+*/
+AlgoliaSearch.prototype.addUserKey = deprecate(function(acls, params, callback) {
+ return this.<span class="apidocCodeKeywordSpan">addApiKey</span>(acls, params, callback);
+}, deprecatedMessage('client.addUserKey()', 'client.addApiKey()'));
+
+/*
+* Add a new global API key
+*
+* @param {string[]} acls - The list of ACL for this key. Defined by an array of strings that
+*   can contains the following values:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addQueryInBatch" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.addQueryInBatch">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addQueryInBatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+AlgoliaSearch.prototype.addQueryInBatch = deprecate(function addQueryInBatchDeprecated(indexName, query, args) {
+this._batch.push({
+  indexName: indexName,
+  query: query,
+  params: args
+});
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">addQueryInBatch</span>()', 'client.search()'
+;));
+
+/**
+ * Launch the batch of queries using XMLHttpRequest.
+ * @deprecated use client.search()
+ */
+AlgoliaSearch.prototype.sendQueriesBatch = deprecate(function sendQueriesBatchDeprecated(callback) {
+return this.search(this._batch, callback);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addUserKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/*
+@deprecated see client.addApiKey
+*/
+AlgoliaSearch.prototype.addUserKey = deprecate(function(acls, params, callback) {
+ return this.addApiKey(acls, params, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">addUserKey</span>()', 'client.addApiKey()'));
+
+/*
+* Add a new global API key
+*
+* @param {string[]} acls - The list of ACL for this key. Defined by an array of strings that
+*   can contains the following values:
+*     - search: allow to search (https and http)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKeyWithValidity" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.addUserKeyWithValidity">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>addUserKeyWithValidity
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/**
+ * @deprecated Please use client.addApiKey()
+ */
+AlgoliaSearch.prototype.addUserKeyWithValidity = deprecate(function(acls, params, callback) {
+  return this.addApiKey(acls, params, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">addUserKeyWithValidity</span>()', 'client.addApiKey
+()'));
+
+/**
+ * @deprecated Please use client.updateApiKey()
+ */
+AlgoliaSearch.prototype.updateUserKey = deprecate(function(key, acls, params, callback) {
+  return this.updateApiKey(key, acls, params, callback);
+}, deprecatedMessage('client.updateUserKey()', 'client.updateApiKey()'));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.batch" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.batch">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>batch
+        <span class="apidocSignatureSpan">(operations, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">batch = function (operations, callback) {
+  var isArray = require('isarray');
+  var usage = 'Usage: client.batch(operations[, callback])';
+
+  if (!isArray(operations)) {
+    throw new Error(usage);
+  }
+
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/*/batch',
+    body: {
+      requests: operations
+    },
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*   - partialUpdateObjectNoCreate
+*   - deleteObject
+*
+* https://www.algolia.com/doc/rest_api#Indexes
+* @param  {Object[]} operations An array of operations to perform
+* @return {Promise|undefined} Returns a promise if no callback given
+* @example
+* client.<span class="apidocCodeKeywordSpan">batch</span>([{
+*   action: 'addObject',
+*   indexName: 'clients',
+*   body: {
+*     name: 'Bill'
+*   }
+* }, {
+*   action: 'udpateObject',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.copyIndex" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.copyIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>copyIndex
+        <span class="apidocSignatureSpan">(srcIndexName, dstIndexName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyIndex = function (srcIndexName, dstIndexName, callback) {
+  var postObj = {
+    operation: 'copy', destination: dstIndexName
+  };
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' + encodeURIComponent(srcIndexName) + '/operation',
+    body: postObj,
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteApiKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteApiKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteApiKey
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteApiKey = function (key, callback) {
+  return this._jsonRequest({
+    method: 'DELETE',
+    url: '/1/keys/' + key,
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ });
+};
+
+/*
+* @deprecated see client.deleteApiKey
+*/
+AlgoliaSearch.prototype.deleteUserKey = deprecate(function(key, callback) {
+ return this.<span class="apidocCodeKeywordSpan">deleteApiKey</span>(key, callback);
+}, deprecatedMessage('client.deleteUserKey()', 'client.deleteApiKey()'));
+
+/*
+* Delete an existing API key
+* @param key
+* @param callback the result callback called with two arguments
+*  error: null or Error('message')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteIndex" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteIndex
+        <span class="apidocSignatureSpan">(indexName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteIndex = function (indexName, callback) {
+  return this._jsonRequest({
+    method: 'DELETE',
+    url: '/1/indexes/' + encodeURIComponent(indexName),
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteUserKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.deleteUserKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>deleteUserKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/*
+* @deprecated see client.deleteApiKey
+*/
+AlgoliaSearch.prototype.deleteUserKey = deprecate(function(key, callback) {
+ return this.deleteApiKey(key, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">deleteUserKey</span>()', 'client.deleteApiKey()&amp;#
+x27;));
+
+/*
+* Delete an existing API key
+* @param key
+* @param callback the result callback called with two arguments
+*  error: null or Error('message')
+*  content: the server answer with the date of deletion
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.destroy" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.destroy">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>destroy
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**Node.js only**
+
+Keep-alive is activated by default.
+
+Because of the nature of keepalive connections, your process will hang even if you do not do any more command using the `client`.
+
+To fix this, we expose a `client.<span class="apidocCodeKeywordSpan">destroy</span>()` method that will terminate all remaining
+alive connections.
+
+You should call this method when you are finished working with the AlgoliaSearch API. So that your process will exit gently.
+
+**Note: keep-alive is still always activated in browsers, this is a native behavior of browsers.**
+
+### Debugging
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableRateLimitForward" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableRateLimitForward">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>disableRateLimitForward
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableSecuredAPIKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.disableSecuredAPIKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>disableSecuredAPIKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.enableRateLimitForward" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.enableRateLimitForward">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>enableRateLimitForward
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.generateSecuredApiKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.generateSecuredApiKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>generateSecuredApiKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getApiKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.getApiKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getApiKey
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApiKey = function (key, callback) {
+  return this._jsonRequest({
+    method: 'GET',
+    url: '/1/keys/' + key,
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ });
+};
+
+/*
+* @deprecated see client.getApiKey
+*/
+AlgoliaSearch.prototype.getUserKeyACL = deprecate(function(key, callback) {
+ return this.<span class="apidocCodeKeywordSpan">getApiKey</span>(key, callback);
+}, deprecatedMessage('client.getUserKeyACL()', 'client.getApiKey()'));
+
+/*
+* Get an API key
+*
+* @param key
+* @param callback the result callback called with two arguments
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getLogs" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.getLogs">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getLogs
+        <span class="apidocSignatureSpan">(offset, length, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLogs = function (offset, length, callback) {
+  var clone = require('./clone.js');
+  var params = {};
+  if (typeof offset === 'object') {
+    // getLogs(params)
+    params = clone(offset);
+    callback = length;
+  } else if (arguments.length === 0 || typeof offset === 'function') {
+    // getLogs([cb])
+    callback = offset;
+  } else if (arguments.length === 1 || typeof length === 'function') {
+    // getLogs(1, [cb)]
+    callback = length;
+    params.offset = offset;
+  } else {
+    // getLogs(1, 2, [cb])
+    params.offset = offset;
+    params.length = length;
+  }
+
+  if (params.offset === undefined) params.offset = 0;
+  if (params.length === undefined) params.length = 10;
+
+  return this._jsonRequest({
+    method: 'GET',
+    url: '/1/logs?' + this._getSearchParams(params, ''),
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.getUserKeyACL" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.getUserKeyACL">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>getUserKeyACL
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/*
+* @deprecated see client.getApiKey
+*/
+AlgoliaSearch.prototype.getUserKeyACL = deprecate(function(key, callback) {
+ return this.getApiKey(key, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">getUserKeyACL</span>()', 'client.getApiKey()'
+;));
+
+/*
+* Get an API key
+*
+* @param key
+* @param callback the result callback called with two arguments
+*  error: null or Error('message')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.initIndex" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.initIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>initIndex
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initIndex = function (indexName) {
+  return new Index(this, indexName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Push data
+
+Without any prior configuration, you can start indexing [500 contacts](https://github.com/algolia/algoliasearch-client-csharp/blob
+/master/contacts.json) in the `contacts` index using the following code:
+
+```js
+var index = client.<span class="apidocCodeKeywordSpan">initIndex</span>('contacts');
+var contactsJSON = require('./contacts.json');
+
+index.addObjects(contactsJSON, function(err, content) {
+  if (err) {
+    console.error(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listApiKeys" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.listApiKeys">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listApiKeys
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listApiKeys = function (callback) {
+  return this._jsonRequest({
+    method: 'GET',
+    url: '/1/keys',
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ return new Index(this, indexName);
+};
+
+/*
+* @deprecated use client.listApiKeys
+*/
+AlgoliaSearch.prototype.listUserKeys = deprecate(function(callback) {
+ return this.<span class="apidocCodeKeywordSpan">listApiKeys</span>(callback);
+}, deprecatedMessage('client.listUserKeys()', 'client.listApiKeys()'));
+
+/*
+* List all existing api keys with their associated ACLs
+*
+* @param callback the result callback called with two arguments
+*  error: null or Error('message')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listIndexes" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.listIndexes">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listIndexes
+        <span class="apidocSignatureSpan">(page, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listIndexes = function (page, callback) {
+  var params = '';
+
+  if (page === undefined || typeof page === 'function') {
+    callback = page;
+  } else {
+    params = '?page=' + page;
+  }
+
+  return this._jsonRequest({
+    method: 'GET',
+    url: '/1/indexes' + params,
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.listUserKeys" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.listUserKeys">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>listUserKeys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+/*
+* @deprecated use client.listApiKeys
+*/
+AlgoliaSearch.prototype.listUserKeys = deprecate(function(callback) {
+ return this.listApiKeys(callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">listUserKeys</span>()', 'client.listApiKeys()'
+;));
+
+/*
+* List all existing api keys with their associated ACLs
+*
+* @param callback the result callback called with two arguments
+*  error: null or Error('message')
+*  content: the server answer with api keys list
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.moveIndex" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.moveIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>moveIndex
+        <span class="apidocSignatureSpan">(srcIndexName, dstIndexName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveIndex = function (srcIndexName, dstIndexName, callback) {
+  var postObj = {
+    operation: 'move', destination: dstIndexName
+  };
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' + encodeURIComponent(srcIndexName) + '/operation',
+    body: postObj,
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.sendQueriesBatch" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.sendQueriesBatch">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>sendQueriesBatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+* Launch the batch of queries using XMLHttpRequest.
+* @deprecated use client.search()
+*/
+AlgoliaSearch.prototype.sendQueriesBatch = deprecate(function sendQueriesBatchDeprecated(callback) {
+ return this.search(this._batch, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">sendQueriesBatch</span>()', 'client.search()'
+;));
+
+/**
+* Perform write operations accross multiple indexes.
+*
+* To reduce the amount of time spent on network round trips,
+* you can create, update, or delete several objects in one call,
+* using the batch endpoint (all operations are done in the given order).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.startQueriesBatch" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.startQueriesBatch">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>startQueriesBatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+ * Initialize a new batch of search queries
+ * @deprecated use client.search()
+ */
+AlgoliaSearch.prototype.startQueriesBatch = deprecate(function startQueriesBatchDeprecated() {
+this._batch = [];
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">startQueriesBatch</span>()', 'client.search()'
+;));
+
+/**
+ * Add a search query in the batch
+ * @deprecated use client.search()
+ */
+AlgoliaSearch.prototype.addQueryInBatch = deprecate(function addQueryInBatchDeprecated(indexName, query, args) {
+this._batch.push({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateApiKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateApiKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>updateApiKey
+        <span class="apidocSignatureSpan">(key, acls, params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateApiKey = function (key, acls, params, callback) {
+  var isArray = require('isarray');
+  var usage = 'Usage: client.updateApiKey(key, arrayOfAcls[, params, callback])';
+
+  if (!isArray(acls)) {
+    throw new Error(usage);
+  }
+
+  if (arguments.length === 2 || typeof params === 'function') {
+    callback = params;
+    params = null;
+  }
+
+  var putObj = {
+    acl: acls
+  };
+
+  if (params) {
+    putObj.validity = params.validity;
+    putObj.maxQueriesPerIPPerHour = params.maxQueriesPerIPPerHour;
+    putObj.maxHitsPerQuery = params.maxHitsPerQuery;
+    putObj.indexes = params.indexes;
+    putObj.description = params.description;
+
+    if (params.queryParameters) {
+      putObj.queryParameters = this._getSearchParams(params.queryParameters, '');
+    }
+
+    putObj.referers = params.referers;
+  }
+
+  return this._jsonRequest({
+    method: 'PUT',
+    url: '/1/keys/' + key,
+    body: putObj,
+    hostType: 'write',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @deprecated Please use client.addApiKey()
+*/
+AlgoliaSearch.prototype.addUserKeyWithValidity = deprecate(function(acls, params, callback) {
+ return this.addApiKey(acls, params, callback);
+}, deprecatedMessage('client.addUserKeyWithValidity()', 'client.addApiKey()'));
+
+/**
+* @deprecated Please use client.<span class="apidocCodeKeywordSpan">updateApiKey</span>()
+*/
+AlgoliaSearch.prototype.updateUserKey = deprecate(function(key, acls, params, callback) {
+ return this.updateApiKey(key, acls, params, callback);
+}, deprecatedMessage('client.updateUserKey()', 'client.updateApiKey()'));
+
+/**
+* Update an existing API key
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateUserKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.updateUserKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>updateUserKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}, deprecatedMessage('client.addUserKeyWithValidity()', 'client.addApiKey()'));
+
+/**
+* @deprecated Please use client.updateApiKey()
+*/
+AlgoliaSearch.prototype.updateUserKey = deprecate(function(key, acls, params, callback) {
+ return this.updateApiKey(key, acls, params, callback);
+}, deprecatedMessage('client.<span class="apidocCodeKeywordSpan">updateUserKey</span>()', 'client.updateApiKey()&amp;#
+x27;));
+
+/**
+* Update an existing API key
+* @param {string} key - The key to update
+* @param {string[]} acls - The list of ACL for this key. Defined by an array of strings that
+*   can contains the following values:
+*     - search: allow to search (https and http)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearch.prototype.useSecuredAPIKey" id="apidoc.element.algoliasearch.AlgoliaSearch.prototype.useSecuredAPIKey">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearch.prototype.</span>useSecuredAPIKey
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.AlgoliaSearchError(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.AlgoliaSearchCore" id="apidoc.module.algoliasearch.AlgoliaSearchCore">module algoliasearch.AlgoliaSearchCore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.AlgoliaSearchCore" id="apidoc.element.algoliasearch.AlgoliaSearchCore.AlgoliaSearchCore">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>AlgoliaSearchCore
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCore(applicationID, apiKey, opts) {
+  var debug = require('debug')('algoliasearch');
+
+  var clone = require('./clone.js');
+  var isArray = require('isarray');
+  var map = require('./map.js');
+
+  var usage = 'Usage: algoliasearch(applicationID, apiKey, opts)';
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !applicationID) {
+    throw new errors.AlgoliaSearchError('Please provide an application ID. ' + usage);
+  }
+
+  if (opts._allowEmptyCredentials !== true &amp;&amp; !apiKey) {
+    throw new errors.AlgoliaSearchError('Please provide an API key. ' + usage);
+  }
+
+  this.applicationID = applicationID;
+  this.apiKey = apiKey;
+
+  this.hosts = {
+    read: [],
+    write: []
+  };
+
+  opts = opts || {};
+
+  var protocol = opts.protocol || 'https:';
+  this._timeouts = opts.timeouts || {
+    connect: 1 * 1000, // 500ms connect is GPRS latency
+    read: 2 * 1000,
+    write: 30 * 1000
+  };
+
+  // backward compat, if opts.timeout is passed, we use it to configure all timeouts like before
+  if (opts.timeout) {
+    this._timeouts.connect = this._timeouts.read = this._timeouts.write = opts.timeout;
+  }
+
+  // while we advocate for colon-at-the-end values: 'http:' for `opts.protocol`
+  // we also accept `http` and `https`. It's a common error.
+  if (!/:$/.test(protocol)) {
+    protocol = protocol + ':';
+  }
+
+  if (opts.protocol !== 'http:' &amp;&amp; opts.protocol !== 'https:') {
+    throw new errors.AlgoliaSearchError('protocol must be `http:` or `https:` (was `' + opts.protocol + '`)');
+  }
+
+  this._checkAppIdData();
+
+  if (!opts.hosts) {
+    var defaultHosts = map(this._shuffleResult, function(hostNumber) {
+      return applicationID + '-' + hostNumber + '.algolianet.com';
+    });
+
+    // no hosts given, compute defaults
+    this.hosts.read = [this.applicationID + '-dsn.algolia.net'].concat(defaultHosts);
+    this.hosts.write = [this.applicationID + '.algolia.net'].concat(defaultHosts);
+  } else if (isArray(opts.hosts)) {
+    // when passing custom hosts, we need to have a different host index if the number
+    // of write/read hosts are different.
+    this.hosts.read = clone(opts.hosts);
+    this.hosts.write = clone(opts.hosts);
+  } else {
+    this.hosts.read = clone(opts.hosts.read);
+    this.hosts.write = clone(opts.hosts.write);
+  }
+
+  // add protocol and lowercase hosts
+  this.hosts.read = map(this.hosts.read, prepareHost(protocol));
+  this.hosts.write = map(this.hosts.write, prepareHost(protocol));
+
+  this.extraHeaders = [];
+
+  // In some situations you might want to warm the cache
+  this.cache = opts._cache || {};
+
+  this._ua = opts._ua;
+  this._useCache = opts._useCache === undefined || opts._cache ? true : opts._useCache;
+  this._useFallback = opts.useFallback === undefined ? true : opts.useFallback;
+
+  this._setTimeout = opts._setTimeout;
+
+  debug('init done, %j', this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.AlgoliaSearchCore.prototype" id="apidoc.module.algoliasearch.AlgoliaSearchCore.prototype">module algoliasearch.AlgoliaSearchCore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._cacheAppIdData" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._cacheAppIdData">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_cacheAppIdData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cacheAppIdData = function (data) {
+  this._hostIndexes = data.hostIndexes;
+  this._timeoutMultiplier = data.timeoutMultiplier;
+  this._shuffleResult = data.shuffleResult;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+AlgoliaSearchCore.prototype.getTimeouts = function() {
+return this._timeouts;
+};
+
+AlgoliaSearchCore.prototype._getAppIdData = function() {
+var data = store.get(this.applicationID);
+if (data !== null) this.<span class="apidocCodeKeywordSpan">_cacheAppIdData</span>(data);
+return data;
+};
+
+AlgoliaSearchCore.prototype._setAppIdData = function(data) {
+data.lastChange = (new Date()).getTime();
+this._cacheAppIdData(data);
+return store.set(this.applicationID, data);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._checkAppIdData" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._checkAppIdData">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_checkAppIdData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkAppIdData = function () {
+  var data = this._getAppIdData();
+  var now = (new Date()).getTime();
+  if (data === null || now - data.lastChange &gt; RESET_APP_DATA_TIMER) {
+    return this._resetInitialAppIdData(data);
+  }
+
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+protocol = protocol + ':';
+  }
+
+  if (opts.protocol !== 'http:' &amp;&amp; opts.protocol !== 'https:') {
+throw new errors.AlgoliaSearchError('protocol must be `http:` or `https:` (was `' + opts.protocol + '`)');
+  }
+
+  this.<span class="apidocCodeKeywordSpan">_checkAppIdData</span>();
+
+  if (!opts.hosts) {
+var defaultHosts = map(this._shuffleResult, function(hostNumber) {
+  return applicationID + '-' + hostNumber + '.algolianet.com';
+});
+
+// no hosts given, compute defaults
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._computeRequestHeaders" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._computeRequestHeaders">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_computeRequestHeaders
+        <span class="apidocSignatureSpan">(additionalUA, withAPIKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_computeRequestHeaders = function (additionalUA, withAPIKey) {
+  var forEach = require('foreach');
+
+  var ua = additionalUA ?
+    this._ua + ';' + additionalUA :
+    this._ua;
+
+  var requestHeaders = {
+    'x-algolia-agent': ua,
+    'x-algolia-application-id': this.applicationID
+  };
+
+  // browser will inline headers in the url, node.js will use http headers
+  // but in some situations, the API KEY will be too long (big secured API keys)
+  // so if the request is a POST and the KEY is very long, we will be asked to not put
+  // it into headers but in the JSON body
+  if (withAPIKey !== false) {
+    requestHeaders['x-algolia-api-key'] = this.apiKey;
+  }
+
+  if (this.userToken) {
+    requestHeaders['x-algolia-usertoken'] = this.userToken;
+  }
+
+  if (this.securityTags) {
+    requestHeaders['x-algolia-tagfilters'] = this.securityTags;
+  }
+
+  if (this.extraHeaders) {
+    forEach(this.extraHeaders, function addToRequestHeaders(header) {
+      requestHeaders[header.name] = header.value;
+    });
+  }
+
+  return requestHeaders;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (
+  this.apiKey.length &gt; MAX_API_KEY_LENGTH &amp;&amp;
+  initialOpts.body !== undefined &amp;&amp;
+  (initialOpts.body.params !== undefined || // index.search()
+  initialOpts.body.requests !== undefined) // client.search()
+) {
+  initialOpts.body.apiKey = this.apiKey;
+  headers = this.<span class="apidocCodeKeywordSpan">_computeRequestHeaders</span>(additionalUA, false);
+} else {
+  headers = this._computeRequestHeaders(additionalUA);
+}
+
+if (initialOpts.body !== undefined) {
+  body = safeJSONStringify(initialOpts.body);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getAppIdData" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getAppIdData">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getAppIdData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getAppIdData = function () {
+  var data = store.get(this.applicationID);
+  if (data !== null) this._cacheAppIdData(data);
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+AlgoliaSearchCore.prototype._setAppIdData = function(data) {
+  data.lastChange = (new Date()).getTime();
+  this._cacheAppIdData(data);
+  return store.set(this.applicationID, data);
+};
+
+AlgoliaSearchCore.prototype._checkAppIdData = function() {
+  var data = this.<span class="apidocCodeKeywordSpan">_getAppIdData</span>();
+  var now = (new Date()).getTime();
+  if (data === null || now - data.lastChange &gt; RESET_APP_DATA_TIMER) {
+    return this._resetInitialAppIdData(data);
+  }
+
+  return data;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostByType" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostByType">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getHostByType
+        <span class="apidocSignatureSpan">(hostType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getHostByType = function (hostType) {
+  return this.hosts[hostType][this._getHostIndexByType(hostType)];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  reqOpts.timeouts = client._getTimeoutsForRequest(initialOpts.hostType);
+  client._setHostIndexByType(0, initialOpts.hostType);
+  usingFallback = true; // the current request is now using fallback
+  return doRequest(client._request.fallback, reqOpts);
+}
+
+var currentHost = client.<span class="apidocCodeKeywordSpan">_getHostByType</span>(initialOpts.hostType);
+
+var url = currentHost + reqOpts.url;
+var options = {
+  body: reqOpts.body,
+  jsonBody: reqOpts.jsonBody,
+  method: reqOpts.method,
+  headers: headers,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostIndexByType" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getHostIndexByType">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getHostIndexByType
+        <span class="apidocSignatureSpan">(hostType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getHostIndexByType = function (hostType) {
+  return this._hostIndexes[hostType];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    currentData[key] = value;
+  });
+
+  return this._setAppIdData(currentData);
+};
+
+AlgoliaSearchCore.prototype._getHostByType = function(hostType) {
+  return this.hosts[hostType][this.<span class="apidocCodeKeywordSpan">_getHostIndexByType</span>(hostType)];
+};
+
+AlgoliaSearchCore.prototype._getTimeoutMultiplier = function() {
+  return this._timeoutMultiplier;
+};
+
+AlgoliaSearchCore.prototype._getHostIndexByType = function(hostType) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getSearchParams" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getSearchParams">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getSearchParams
+        <span class="apidocSignatureSpan">(args, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getSearchParams = function (args, params) {
+  if (args === undefined || args === null) {
+    return params;
+  }
+  for (var key in args) {
+    if (key !== null &amp;&amp; args[key] !== undefined &amp;&amp; args.hasOwnProperty(key)) {
+      params += params === '' ? '' : '&amp;';
+      params += key + '=' + encodeURIComponent(Object.prototype.toString.call(args[key]) === '[object Array]' ? safeJSONStringify
+(args[key]) : args[key]);
+    }
+  }
+  return params;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+
+ if (params.offset === undefined) params.offset = 0;
+ if (params.length === undefined) params.length = 10;
+
+ return this._jsonRequest({
+   method: 'GET',
+   url: '/1/logs?' + this.<span class="apidocCodeKeywordSpan">_getSearchParams</span>(params, ''),
+   hostType: 'read',
+   callback: callback
+ });
+};
+
+/*
+* List all existing indexes (paginated)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutMultiplier" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutMultiplier">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getTimeoutMultiplier
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getTimeoutMultiplier = function () {
+  return this._timeoutMultiplier;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutsForRequest" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._getTimeoutsForRequest">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_getTimeoutsForRequest
+        <span class="apidocSignatureSpan">(hostType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getTimeoutsForRequest = function (hostType) {
+  return {
+    connect: this._timeouts.connect * this._timeoutMultiplier,
+    complete: this._timeouts[hostType] * this._timeoutMultiplier
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  reqOpts.jsonBody = initialOpts.fallback.body;
+  if (reqOpts.jsonBody) {
+    reqOpts.body = safeJSONStringify(reqOpts.jsonBody);
+  }
+  // re-compute headers, they could be omitting the API KEY
+  headers = client._computeRequestHeaders(additionalUA);
+
+  reqOpts.timeouts = client.<span class="apidocCodeKeywordSpan">_getTimeoutsForRequest</span>(initialOpts.hostType);
+  client._setHostIndexByType(0, initialOpts.hostType);
+  usingFallback = true; // the current request is now using fallback
+  return doRequest(client._request.fallback, reqOpts);
+}
+
+var currentHost = client._getHostByType(initialOpts.hostType);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementHostIndex" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementHostIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_incrementHostIndex
+        <span class="apidocSignatureSpan">(hostType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_incrementHostIndex = function (hostType) {
+  return this._setHostIndexByType(
+    (this._getHostIndexByType(hostType) + 1) % this.hosts[hostType].length, hostType
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  return retryRequest();
+}
+
+function retryRequest() {
+  requestDebug('retrying request');
+  client.<span class="apidocCodeKeywordSpan">_incrementHostIndex</span>(initialOpts.hostType);
+  return doRequest(requester, reqOpts);
+}
+
+function retryRequestWithHigherTimeout() {
+  requestDebug('retrying request with higher timeout');
+  client._incrementHostIndex(initialOpts.hostType);
+  client._incrementTimeoutMultipler();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementTimeoutMultipler" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._incrementTimeoutMultipler">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_incrementTimeoutMultipler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_incrementTimeoutMultipler = function () {
+  var timeoutMultiplier = Math.max(this._timeoutMultiplier + 1, 4);
+  return this._partialAppIdDataUpdate({timeoutMultiplier: timeoutMultiplier});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    client._incrementHostIndex(initialOpts.hostType);
+    return doRequest(requester, reqOpts);
+  }
+
+  function retryRequestWithHigherTimeout() {
+    requestDebug('retrying request with higher timeout');
+    client._incrementHostIndex(initialOpts.hostType);
+    client.<span class="apidocCodeKeywordSpan">_incrementTimeoutMultipler</span>();
+    reqOpts.timeouts = client._getTimeoutsForRequest(initialOpts.hostType);
+    return doRequest(requester, reqOpts);
+  }
+}
+
+var promise = doRequest(
+  client._request, {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._jsonRequest" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._jsonRequest">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_jsonRequest
+        <span class="apidocSignatureSpan">(initialOpts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_jsonRequest = function (initialOpts) {
+  this._checkAppIdData();
+
+  var requestDebug = require('debug')('algoliasearch:' + initialOpts.url);
+
+  var body;
+  var additionalUA = initialOpts.additionalUA || '';
+  var cache = initialOpts.cache;
+  var client = this;
+  var tries = 0;
+  var usingFallback = false;
+  var hasFallback = client._useFallback &amp;&amp; client._request.fallback &amp;&amp; initialOpts.fallback;
+  var headers;
+
+  if (
+    this.apiKey.length &gt; MAX_API_KEY_LENGTH &amp;&amp;
+    initialOpts.body !== undefined &amp;&amp;
+    (initialOpts.body.params !== undefined || // index.search()
+    initialOpts.body.requests !== undefined) // client.search()
+  ) {
+    initialOpts.body.apiKey = this.apiKey;
+    headers = this._computeRequestHeaders(additionalUA, false);
+  } else {
+    headers = this._computeRequestHeaders(additionalUA);
+  }
+
+  if (initialOpts.body !== undefined) {
+    body = safeJSONStringify(initialOpts.body);
+  }
+
+  requestDebug('request start');
+  var debugData = [];
+
+  function doRequest(requester, reqOpts) {
+    client._checkAppIdData();
+
+    var startTime = new Date();
+    var cacheID;
+
+    if (client._useCache) {
+      cacheID = initialOpts.url;
+    }
+
+    // as we sometime use POST requests to pass parameters (like query='aa'),
+    // the cacheID must also include the body to be different between calls
+    if (client._useCache &amp;&amp; body) {
+      cacheID += '_body_' + reqOpts.body;
+    }
+
+    // handle cache existence
+    if (client._useCache &amp;&amp; cache &amp;&amp; cache[cacheID] !== undefined) {
+      requestDebug('serving response from cache');
+      return client._promise.resolve(JSON.parse(cache[cacheID]));
+    }
+
+    // if we reached max tries
+    if (tries &gt;= client.hosts[initialOpts.hostType].length) {
+      if (!hasFallback || usingFallback) {
+        requestDebug('could not get any response');
+        // then stop
+        return client._promise.reject(new errors.AlgoliaSearchError(
+          'Cannot connect to the AlgoliaSearch API.' +
+          ' Send an email to support@algolia.com to report and resolve the issue.' +
+          ' Application id was: ' + client.applicationID, {debugData: debugData}
+        ));
+      }
+
+      requestDebug('switching to fallback');
+
+      // let's try the fallback starting from here
+      tries = 0;
+
+      // method, url and body are fallback dependent
+      reqOpts.method = initialOpts.fallback.method;
+      reqOpts.url = initialOpts.fallback.url;
+      reqOpts.jsonBody = initialOpts.fallback.body;
+      if (reqOpts.jsonBody) {
+        reqOpts.body = safeJSONStringify(reqOpts.jsonBody);
+      }
+      // re-compute headers, they could be omitting the API KEY
+      headers = client._computeRequestHeaders(additionalUA);
+
+      reqOpts.timeouts = client._getTimeoutsForRequest(initialOpts.hostType);
+      client._setHostIndexByType(0, initialOpts.hostType);
+      usingFallback = true; // the current request is now using fallback
+      return doRequest(client._request.fallback, reqOpts);
+    }
+
+    var currentHost = client._getHostByType(initialOpts.hostType);
+
+    var url = currentHost + reqOpts.url;
+    var options = {
+      body: reqOpts.body,
+      jsonBody: reqOpts.jsonBody,
+      method: reqOpts.method,
+      headers: headers,
+      timeouts: reqOpts.timeouts,
+      debug: requestDebug
+    };
+
+    requestDebug('method: %s, url: %s, headers: %j, timeouts: %d',
+      options.method, url, options.headers, options.timeouts);
+
+    if (requester === client._request.fallback) {
+      requestDebug('using fallback');
+    }
+
+    // `requester` is any of this._request or this._request.fallback
+    // thus it needs to be called using the client as context
+    return requester.call(client, url, options).then(success, tryFallback);
+
+    function success(httpResponse) {
+      // compute the status of the response,
+      //
+      // When in browser mode, using XDR or JSONP, we have no statusCode available
+      // So we rely on our API response `status` property.
+      // But `waitTask` can set a `status` property which is not the statusCode (it's the task status)
+      // So we check if there's a `message` along `status` and it ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param indexName the name of index to delete
+ * @param callback the result callback called with two arguments
+ *  error: null or Error('message')
+ *  content: the server answer that contains the task ID
+ */
+AlgoliaSearch.prototype.deleteIndex = function(indexName, callback) {
+  return this.<span class="apidocCodeKeywordSpan">_jsonRequest</span>({
+    method: 'DELETE',
+    url: '/1/indexes/' + encodeURIComponent(indexName),
+    hostType: 'write',
+    callback: callback
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._partialAppIdDataUpdate" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._partialAppIdDataUpdate">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_partialAppIdDataUpdate
+        <span class="apidocSignatureSpan">(newData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_partialAppIdDataUpdate = function (newData) {
+  var foreach = require('foreach');
+  var currentData = this._getAppIdData();
+  foreach(newData, function(value, key) {
+    currentData[key] = value;
+  });
+
+  return this._setAppIdData(currentData);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return this._hostIndexes[hostType];
+};
+
+AlgoliaSearchCore.prototype._setHostIndexByType = function(hostIndex, hostType) {
+var clone = require('./clone');
+var newHostIndexes = clone(this._hostIndexes);
+newHostIndexes[hostType] = hostIndex;
+this.<span class="apidocCodeKeywordSpan">_partialAppIdDataUpdate</span>({hostIndexes: newHostIndexes});
+return hostIndex;
+};
+
+AlgoliaSearchCore.prototype._incrementHostIndex = function(hostType) {
+return this._setHostIndexByType(
+  (this._getHostIndexByType(hostType) + 1) % this.hosts[hostType].length, hostType
+);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._resetInitialAppIdData" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._resetInitialAppIdData">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_resetInitialAppIdData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resetInitialAppIdData = function (data) {
+  var newData = data || {};
+  newData.hostIndexes = {read: 0, write: 0};
+  newData.timeoutMultiplier = 1;
+  newData.shuffleResult = newData.shuffleResult || shuffle([1, 2, 3]);
+  return this._setAppIdData(newData);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return store.set(this.applicationID, data);
+};
+
+AlgoliaSearchCore.prototype._checkAppIdData = function() {
+var data = this._getAppIdData();
+var now = (new Date()).getTime();
+if (data === null || now - data.lastChange &gt; RESET_APP_DATA_TIMER) {
+  return this.<span class="apidocCodeKeywordSpan">_resetInitialAppIdData</span>(data);
+}
+
+return data;
+};
+
+AlgoliaSearchCore.prototype._resetInitialAppIdData = function(data) {
+var newData = data || {};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setAppIdData" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setAppIdData">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_setAppIdData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setAppIdData = function (data) {
+  data.lastChange = (new Date()).getTime();
+  this._cacheAppIdData(data);
+  return store.set(this.applicationID, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+
+AlgoliaSearchCore.prototype._resetInitialAppIdData = function(data) {
+  var newData = data || {};
+  newData.hostIndexes = {read: 0, write: 0};
+  newData.timeoutMultiplier = 1;
+  newData.shuffleResult = newData.shuffleResult || shuffle([1, 2, 3]);
+  return this.<span class="apidocCodeKeywordSpan">_setAppIdData</span>(newData);
+};
+
+AlgoliaSearchCore.prototype._cacheAppIdData = function(data) {
+  this._hostIndexes = data.hostIndexes;
+  this._timeoutMultiplier = data.timeoutMultiplier;
+  this._shuffleResult = data.shuffleResult;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setHostIndexByType" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype._setHostIndexByType">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>_setHostIndexByType
+        <span class="apidocSignatureSpan">(hostIndex, hostType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setHostIndexByType = function (hostIndex, hostType) {
+  var clone = require('./clone');
+  var newHostIndexes = clone(this._hostIndexes);
+  newHostIndexes[hostType] = hostIndex;
+  this._partialAppIdDataUpdate({hostIndexes: newHostIndexes});
+  return hostIndex;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (reqOpts.jsonBody) {
+    reqOpts.body = safeJSONStringify(reqOpts.jsonBody);
+  }
+  // re-compute headers, they could be omitting the API KEY
+  headers = client._computeRequestHeaders(additionalUA);
+
+  reqOpts.timeouts = client._getTimeoutsForRequest(initialOpts.hostType);
+  client.<span class="apidocCodeKeywordSpan">_setHostIndexByType</span>(0, initialOpts.hostType);
+  usingFallback = true; // the current request is now using fallback
+  return doRequest(client._request.fallback, reqOpts);
+}
+
+var currentHost = client._getHostByType(initialOpts.hostType);
+
+var url = currentHost + reqOpts.url;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.addAlgoliaAgent" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.addAlgoliaAgent">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>addAlgoliaAgent
+        <span class="apidocSignatureSpan">(algoliaAgent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addAlgoliaAgent = function (algoliaAgent) {
+  if (this._ua.indexOf(';' + algoliaAgent) === -1) {
+    this._ua += ';' + algoliaAgent;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.clearCache" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.clearCache">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>clearCache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearCache = function () {
+  this.cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+This is particularly useful when your users are deleting characters from their
+current query, to avoid useless API calls. Because it is stored as a simple
+JavaScript object in memory, the cache is automatically reset whenever you
+reload the page.
+
+It is never automatically purged, nor can it be completely disabled. Instead, we
+provide the `index.<span class="apidocCodeKeywordSpan">clearCache</span>()` (or `client.clearCache()` if you're using the
+[Search multiple indices](#search-multiple-indices) method that you can call to reset it.
+
+### Proxy support
+
+**Node.js only**
+
+If you are behind a proxy, just set `HTTP_PROXY` or `HTTPS_PROXY` environment variables before starting your Node.js program.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.getTimeouts" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.getTimeouts">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>getTimeouts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTimeouts = function () {
+  return this._timeouts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.initIndex" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.initIndex">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>initIndex
+        <span class="apidocSignatureSpan">(indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initIndex = function (indexName) {
+  return new IndexCore(this, indexName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Push data
+
+Without any prior configuration, you can start indexing [500 contacts](https://github.com/algolia/algoliasearch-client-csharp/blob
+/master/contacts.json) in the `contacts` index using the following code:
+
+```js
+var index = client.<span class="apidocCodeKeywordSpan">initIndex</span>('contacts');
+var contactsJSON = require('./contacts.json');
+
+index.addObjects(contactsJSON, function(err, content) {
+  if (err) {
+    console.error(err);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.search" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.search">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>search
+        <span class="apidocSignatureSpan">(queries, opts, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (queries, opts, callback) {
+  var isArray = require('isarray');
+  var map = require('./map.js');
+
+  var usage = 'Usage: client.search(arrayOfQueries[, callback])';
+
+  if (!isArray(queries)) {
+    throw new Error(usage);
+  }
+
+  if (typeof opts === 'function') {
+    callback = opts;
+    opts = {};
+  } else if (opts === undefined) {
+    opts = {};
+  }
+
+  var client = this;
+
+  var postObj = {
+    requests: map(queries, function prepareRequest(query) {
+      var params = '';
+
+      // allow query.query
+      // so we are mimicing the index.search(query, params) method
+      // {indexName:, query:, params:}
+      if (query.query !== undefined) {
+        params += 'query=' + encodeURIComponent(query.query);
+      }
+
+      return {
+        indexName: query.indexName,
+        params: client._getSearchParams(query.params, params)
+      };
+    })
+  };
+
+  var JSONPParams = map(postObj.requests, function prepareJSONPParams(request, requestId) {
+    return requestId + '=' +
+      encodeURIComponent(
+        '/1/indexes/' + encodeURIComponent(request.indexName) + '?' +
+        request.params
+      );
+  }).join('&amp;');
+
+  var url = '/1/indexes/*/queries';
+
+  if (opts.strategy !== undefined) {
+    url += '?strategy=' + opts.strategy;
+  }
+
+  return this._jsonRequest({
+    cache: this.cache,
+    method: 'POST',
+    url: url,
+    body: postObj,
+    hostType: 'read',
+    fallback: {
+      method: 'GET',
+      url: '/1/indexes/*',
+      body: {
+        params: JSONPParams
+      }
+    },
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Search
+
+You can now search for contacts using firstname, lastname, company, etc. (even with typos):
+
+```js
+// firstname
+index.<span class="apidocCodeKeywordSpan">search</span>('jimmie', function(err, content) {
+  console.log(content.hits);
+});
+
+// firstname with typo
+index.search('jimie', function(err, content) {
+  console.log(content.hits);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setExtraHeader" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setExtraHeader">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setExtraHeader
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExtraHeader = function (name, value) {
+  this.extraHeaders.push({
+    name: name.toLowerCase(), value: value
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setRequestTimeout" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setRequestTimeout">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setRequestTimeout
+        <span class="apidocSignatureSpan">(milliseconds)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setRequestTimeout = function (milliseconds) {
+  if (milliseconds) {
+    this._timeouts.connect = this._timeouts.read = this._timeouts.write = milliseconds;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setSecurityTags" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setSecurityTags">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setSecurityTags
+        <span class="apidocSignatureSpan">(tags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSecurityTags = function (tags) {
+  if (Object.prototype.toString.call(tags) === '[object Array]') {
+    var strTags = [];
+    for (var i = 0; i &lt; tags.length; ++i) {
+      if (Object.prototype.toString.call(tags[i]) === '[object Array]') {
+        var oredTags = [];
+        for (var j = 0; j &lt; tags[i].length; ++j) {
+          oredTags.push(tags[i][j]);
+        }
+        strTags.push('(' + oredTags.join(',') + ')');
+      } else {
+        strTags.push(tags[i]);
+      }
+    }
+    tags = strTags.join(',');
+  }
+
+  this.securityTags = tags;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setTimeouts" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setTimeouts">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setTimeouts
+        <span class="apidocSignatureSpan">(timeouts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTimeouts = function (timeouts) {
+  this._timeouts = timeouts;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setUserToken" id="apidoc.element.algoliasearch.AlgoliaSearchCore.prototype.setUserToken">
+        function <span class="apidocSignatureSpan">algoliasearch.AlgoliaSearchCore.prototype.</span>setUserToken
+        <span class="apidocSignatureSpan">(userToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setUserToken = function (userToken) {
+  this.userToken = userToken;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.IndexBrowser" id="apidoc.module.algoliasearch.IndexBrowser">module algoliasearch.IndexBrowser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.IndexBrowser" id="apidoc.element.algoliasearch.IndexBrowser.IndexBrowser">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>IndexBrowser
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexBrowser() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.super_" id="apidoc.element.algoliasearch.IndexBrowser.super_">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.IndexBrowser.prototype" id="apidoc.module.algoliasearch.IndexBrowser.prototype">module algoliasearch.IndexBrowser.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.prototype._clean" id="apidoc.element.algoliasearch.IndexBrowser.prototype._clean">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_clean
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_clean = function () {
+  this.removeAllListeners('stop');
+  this.removeAllListeners('end');
+  this.removeAllListeners('error');
+  this.removeAllListeners('result');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function IndexBrowser() {
+}
+
+inherits(IndexBrowser, EventEmitter);
+
+IndexBrowser.prototype.stop = function() {
+  this._stopped = true;
+  this.<span class="apidocCodeKeywordSpan">_clean</span>();
+};
+
+IndexBrowser.prototype._end = function() {
+  this.emit('end');
+  this._clean();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.prototype._end" id="apidoc.element.algoliasearch.IndexBrowser.prototype._end">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_end = function () {
+  this.emit('end');
+  this._clean();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.prototype._error" id="apidoc.element.algoliasearch.IndexBrowser.prototype._error">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_error
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_error = function (err) {
+  this.emit('error', err);
+  this._clean();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.prototype._result" id="apidoc.element.algoliasearch.IndexBrowser.prototype._result">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>_result
+        <span class="apidocSignatureSpan">(content)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_result = function (content) {
+  this.emit('result', content);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexBrowser.prototype.stop" id="apidoc.element.algoliasearch.IndexBrowser.prototype.stop">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexBrowser.prototype.</span>stop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stop = function () {
+  this._stopped = true;
+  this._clean();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.IndexCore" id="apidoc.module.algoliasearch.IndexCore">module algoliasearch.IndexCore</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.IndexCore" id="apidoc.element.algoliasearch.IndexCore.IndexCore">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>IndexCore
+        <span class="apidocSignatureSpan">(algoliasearch, indexName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IndexCore(algoliasearch, indexName) {
+  this.indexName = indexName;
+  this.as = algoliasearch;
+  this.typeAheadArgs = null;
+  this.typeAheadValueOption = null;
+
+  // make sure every index instance has it's own cache
+  this.cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.IndexCore.prototype" id="apidoc.module.algoliasearch.IndexCore.prototype">module algoliasearch.IndexCore.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype._search" id="apidoc.element.algoliasearch.IndexCore.prototype._search">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>_search
+        <span class="apidocSignatureSpan">(params, url, callback, additionalUA)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_search = function (params, url, callback, additionalUA) {
+  return this.as._jsonRequest({
+    cache: this.cache,
+    method: 'POST',
+    url: url || '/1/indexes/' + encodeURIComponent(this.indexName) + '/query',
+    body: {params: params},
+    hostType: 'read',
+    fallback: {
+      method: 'GET',
+      url: '/1/indexes/' + encodeURIComponent(this.indexName),
+      body: {params: params}
+    },
+    callback: callback,
+    additionalUA: additionalUA
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        delete args.additionalUA;
+      }
+      // `_getSearchParams` will augment params, do not be fooled by the = versus += from previous if
+      params = this.as._getSearchParams(args, params);
+    }
+
+
+    return this.<span class="apidocCodeKeywordSpan">_search</span>(params, url, callback, additionalUA);
+  };
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.browse" id="apidoc.element.algoliasearch.IndexCore.prototype.browse">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>browse
+        <span class="apidocSignatureSpan">(query, queryParameters, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">browse = function (query, queryParameters, callback) {
+  var merge = require('./merge.js');
+
+  var indexObj = this;
+
+  var page;
+  var hitsPerPage;
+
+  // we check variadic calls that are not the one defined
+  // .browse()/.browse(fn)
+  // =&gt; page = 0
+  if (arguments.length === 0 || arguments.length === 1 &amp;&amp; typeof arguments[0] === 'function') {
+    page = 0;
+    callback = arguments[0];
+    query = undefined;
+  } else if (typeof arguments[0] === 'number') {
+    // .browse(2)/.browse(2, 10)/.browse(2, fn)/.browse(2, 10, fn)
+    page = arguments[0];
+    if (typeof arguments[1] === 'number') {
+      hitsPerPage = arguments[1];
+    } else if (typeof arguments[1] === 'function') {
+      callback = arguments[1];
+      hitsPerPage = undefined;
+    }
+    query = undefined;
+    queryParameters = undefined;
+  } else if (typeof arguments[0] === 'object') {
+    // .browse(queryParameters)/.browse(queryParameters, cb)
+    if (typeof arguments[1] === 'function') {
+      callback = arguments[1];
+    }
+    queryParameters = arguments[0];
+    query = undefined;
+  } else if (typeof arguments[0] === 'string' &amp;&amp; typeof arguments[1] === 'function') {
+    // .browse(query, cb)
+    callback = arguments[1];
+    queryParameters = undefined;
+  }
+
+  // otherwise it's a .browse(query)/.browse(query, queryParameters)/.browse(query, queryParameters, cb)
+
+  // get search query parameters combining various possible calls
+  // to .browse();
+  queryParameters = merge({}, queryParameters || {}, {
+    page: page,
+    hitsPerPage: hitsPerPage,
+    query: query
+  });
+
+  var params = this.as._getSearchParams(queryParameters, '');
+
+  return this.as._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' + encodeURIComponent(indexObj.indexName) + '/browse',
+    body: {params: params},
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {string} query - The full text query
+* @param {Object} [queryParameters] - Any search query parameter
+* @param {Function} [callback] - The result callback called with two arguments
+*   error: null or Error('message')
+*   content: the server answer with the browse result
+* @return {Promise|undefined} Returns a promise if no callback given
+* @example
+* index.<span class="apidocCodeKeywordSpan">browse</span>('cool songs', {
+*   tagFilters: 'public,comments',
+*   hitsPerPage: 500
+* }, callback);
+* @see {@link https://www.algolia.com/doc/rest_api#Browse|Algolia REST API Documentation}
+*/
+IndexCore.prototype.browse = function(query, queryParameters, callback) {
+var merge = require('./merge.js');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.browseFrom" id="apidoc.element.algoliasearch.IndexCore.prototype.browseFrom">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>browseFrom
+        <span class="apidocSignatureSpan">(cursor, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">browseFrom = function (cursor, callback) {
+  return this.as._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' + encodeURIComponent(this.indexName) + '/browse',
+    body: {cursor: cursor},
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*   All search parameters are supported (see search function), restrictSearchableAttributes and facetFilters
+*   are the two most useful to restrict the similar results and get more relevant content
+*/
+IndexCore.prototype.similarSearch = buildSearchMethod('similarQuery');
+
+/*
+* Browse index content. The response content will have a `cursor` property that you can use
+* to browse subsequent pages for this query. Use `index.<span class="apidocCodeKeywordSpan">browseFrom</span>(cursor)` when you
+want.
+*
+* @param {string} query - The full text query
+* @param {Object} [queryParameters] - Any search query parameter
+* @param {Function} [callback] - The result callback called with two arguments
+*   error: null or Error('message')
+*   content: the server answer with the browse result
+* @return {Promise|undefined} Returns a promise if no callback given
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.clearCache" id="apidoc.element.algoliasearch.IndexCore.prototype.clearCache">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>clearCache
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearCache = function () {
+  this.cache = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+This is particularly useful when your users are deleting characters from their
+current query, to avoid useless API calls. Because it is stored as a simple
+JavaScript object in memory, the cache is automatically reset whenever you
+reload the page.
+
+It is never automatically purged, nor can it be completely disabled. Instead, we
+provide the `index.<span class="apidocCodeKeywordSpan">clearCache</span>()` (or `client.clearCache()` if you're using the
+[Search multiple indices](#search-multiple-indices) method that you can call to reset it.
+
+### Proxy support
+
+**Node.js only**
+
+If you are behind a proxy, just set `HTTP_PROXY` or `HTTPS_PROXY` environment variables before starting your Node.js program.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.getObject" id="apidoc.element.algoliasearch.IndexCore.prototype.getObject">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>getObject
+        <span class="apidocSignatureSpan">(objectID, attrs, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getObject = function (objectID, attrs, callback) {
+  var indexObj = this;
+
+  if (arguments.length === 1 || typeof attrs === 'function') {
+    callback = attrs;
+    attrs = undefined;
+  }
+
+  var params = '';
+  if (attrs !== undefined) {
+    params = '?attributes=';
+    for (var i = 0; i &lt; attrs.length; ++i) {
+      if (i !== 0) {
+        params += ',';
+      }
+      params += attrs[i];
+    }
+  }
+
+  return this.as._jsonRequest({
+    method: 'GET',
+    url: '/1/indexes/' + encodeURIComponent(indexObj.indexName) + '/' + encodeURIComponent(objectID) + params,
+    hostType: 'read',
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.getObjects" id="apidoc.element.algoliasearch.IndexCore.prototype.getObjects">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>getObjects
+        <span class="apidocSignatureSpan">(objectIDs, attributesToRetrieve, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getObjects = function (objectIDs, attributesToRetrieve, callback) {
+  var isArray = require('isarray');
+  var map = require('./map.js');
+
+  var usage = 'Usage: index.getObjects(arrayOfObjectIDs[, callback])';
+
+  if (!isArray(objectIDs)) {
+    throw new Error(usage);
+  }
+
+  var indexObj = this;
+
+  if (arguments.length === 1 || typeof attributesToRetrieve === 'function') {
+    callback = attributesToRetrieve;
+    attributesToRetrieve = undefined;
+  }
+
+  var body = {
+    requests: map(objectIDs, function prepareRequest(objectID) {
+      var request = {
+        indexName: indexObj.indexName,
+        objectID: objectID
+      };
+
+      if (attributesToRetrieve) {
+        request.attributesToRetrieve = attributesToRetrieve.join(',');
+      }
+
+      return request;
+    })
+  };
+
+  return this.as._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/*/objects',
+    hostType: 'read',
+    body: body,
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param objectIDs the array of unique identifier of objects to retrieve
+*/
+IndexCore.prototype.getObjects = function(objectIDs, attributesToRetrieve, callback) {
+var isArray = require('isarray');
+var map = require('./map.js');
+
+var usage = 'Usage: index.<span class="apidocCodeKeywordSpan">getObjects</span>(arrayOfObjectIDs[, callback])';
+
+if (!isArray(objectIDs)) {
+  throw new Error(usage);
+}
+
+var indexObj = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.search" id="apidoc.element.algoliasearch.IndexCore.prototype.search">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>search
+        <span class="apidocSignatureSpan">(query, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function search(query, args, callback) {
+  // warn V2 users on how to search
+  if (typeof query === 'function' &amp;&amp; typeof args === 'object' ||
+    typeof callback === 'object') {
+    // .search(query, params, cb)
+    // .search(cb, params)
+    throw new errors.AlgoliaSearchError('index.search usage is index.search(query, params, cb)');
+  }
+
+  // Normalizing the function signature
+  if (arguments.length === 0 || typeof query === 'function') {
+    // Usage : .search(), .search(cb)
+    callback = query;
+    query = '';
+  } else if (arguments.length === 1 || typeof args === 'function') {
+    // Usage : .search(query/args), .search(query, cb)
+    callback = args;
+    args = undefined;
+  }
+  // At this point we have 3 arguments with values
+
+  // Usage : .search(args) // careful: typeof null === 'object'
+  if (typeof query === 'object' &amp;&amp; query !== null) {
+    args = query;
+    query = undefined;
+  } else if (query === undefined || query === null) { // .search(undefined/null)
+    query = '';
+  }
+
+  var params = '';
+
+  if (query !== undefined) {
+    params += queryParam + '=' + encodeURIComponent(query);
+  }
+
+  var additionalUA;
+  if (args !== undefined) {
+    if (args.additionalUA) {
+      additionalUA = args.additionalUA;
+      delete args.additionalUA;
+    }
+    // `_getSearchParams` will augment params, do not be fooled by the = versus += from previous if
+    params = this.as._getSearchParams(args, params);
+  }
+
+
+  return this._search(params, url, callback, additionalUA);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Search
+
+You can now search for contacts using firstname, lastname, company, etc. (even with typos):
+
+```js
+// firstname
+index.<span class="apidocCodeKeywordSpan">search</span>('jimmie', function(err, content) {
+  console.log(content.hits);
+});
+
+// firstname with typo
+index.search('jimie', function(err, content) {
+  console.log(content.hits);
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.searchFacet" id="apidoc.element.algoliasearch.IndexCore.prototype.searchFacet">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>searchFacet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  if (!warned) {
+<span class="apidocCodeCommentSpan">    /* eslint no-console:0 */
+</span>    console.log(message);
+    warned = true;
+  }
+
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  callback: callback
+});
+};
+
+IndexCore.prototype.searchFacet = deprecate(function(params, callback) {
+return this.searchForFacetValues(params, callback);
+}, deprecatedMessage(
+'index.<span class="apidocCodeKeywordSpan">searchFacet</span>(params[, callback])',
+'index.searchForFacetValues(params[, callback])'
+));
+
+IndexCore.prototype._search = function(params, url, callback, additionalUA) {
+return this.as._jsonRequest({
+  cache: this.cache,
+  method: 'POST',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.searchForFacetValues" id="apidoc.element.algoliasearch.IndexCore.prototype.searchForFacetValues">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>searchForFacetValues
+        <span class="apidocSignatureSpan">(params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">searchForFacetValues = function (params, callback) {
+  var clone = require('./clone.js');
+  var omit = require('./omit.js');
+  var usage = 'Usage: index.searchForFacetValues({facetName, facetQuery, ...params}[, callback])';
+
+  if (params.facetName === undefined || params.facetQuery === undefined) {
+    throw new Error(usage);
+  }
+
+  var facetName = params.facetName;
+  var filteredParams = omit(clone(params), function(keyName) {
+    return keyName === 'facetName';
+  });
+  var searchParameters = this.as._getSearchParams(filteredParams, '');
+
+  return this.as._jsonRequest({
+    method: 'POST',
+    url: '/1/indexes/' +
+      encodeURIComponent(this.indexName) + '/facets/' + encodeURIComponent(facetName) + '/query',
+    hostType: 'read',
+    body: {params: searchParameters},
+    callback: callback
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* see https://www.algolia.com/doc/api-client/javascript/search#search-parameters
+* Pagination is not supported. The page and hitsPerPage parameters will be ignored.
+* @param callback (optional)
+*/
+IndexCore.prototype.searchForFacetValues = function(params, callback) {
+var clone = require('./clone.js');
+var omit = require('./omit.js');
+var usage = 'Usage: index.<span class="apidocCodeKeywordSpan">searchForFacetValues</span>({facetName, facetQuery, ...params
+}[, callback])';
+
+if (params.facetName === undefined || params.facetQuery === undefined) {
+  throw new Error(usage);
+}
+
+var facetName = params.facetName;
+var filteredParams = omit(clone(params), function(keyName) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.IndexCore.prototype.similarSearch" id="apidoc.element.algoliasearch.IndexCore.prototype.similarSearch">
+        function <span class="apidocSignatureSpan">algoliasearch.IndexCore.prototype.</span>similarSearch
+        <span class="apidocSignatureSpan">(query, args, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function search(query, args, callback) {
+  // warn V2 users on how to search
+  if (typeof query === 'function' &amp;&amp; typeof args === 'object' ||
+    typeof callback === 'object') {
+    // .search(query, params, cb)
+    // .search(cb, params)
+    throw new errors.AlgoliaSearchError('index.search usage is index.search(query, params, cb)');
+  }
+
+  // Normalizing the function signature
+  if (arguments.length === 0 || typeof query === 'function') {
+    // Usage : .search(), .search(cb)
+    callback = query;
+    query = '';
+  } else if (arguments.length === 1 || typeof args === 'function') {
+    // Usage : .search(query/args), .search(query, cb)
+    callback = args;
+    args = undefined;
+  }
+  // At this point we have 3 arguments with values
+
+  // Usage : .search(args) // careful: typeof null === 'object'
+  if (typeof query === 'object' &amp;&amp; query !== null) {
+    args = query;
+    query = undefined;
+  } else if (query === undefined || query === null) { // .search(undefined/null)
+    query = '';
+  }
+
+  var params = '';
+
+  if (query !== undefined) {
+    params += queryParam + '=' + encodeURIComponent(query);
+  }
+
+  var additionalUA;
+  if (args !== undefined) {
+    if (args.additionalUA) {
+      additionalUA = args.additionalUA;
+      delete args.additionalUA;
+    }
+    // `_getSearchParams` will augment params, do not be fooled by the = versus += from previous if
+    params = this.as._getSearchParams(args, params);
+  }
+
+
+  return this._search(params, url, callback, additionalUA);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.errors" id="apidoc.module.algoliasearch.errors">module algoliasearch.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.AlgoliaSearchError" id="apidoc.element.algoliasearch.errors.AlgoliaSearchError">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>AlgoliaSearchError
+        <span class="apidocSignatureSpan">(message, extraProperties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchError(message, extraProperties) {
+  var forEach = require('foreach');
+
+  var error = this;
+
+  // try to get a stacktrace
+  if (typeof Error.captureStackTrace === 'function') {
+    Error.captureStackTrace(this, this.constructor);
+  } else {
+    error.stack = (new Error()).stack || 'Cannot get a stacktrace, browser is too old';
+  }
+
+  this.name = 'AlgoliaSearchError';
+  this.message = message || 'Unknown error';
+
+  if (extraProperties) {
+    forEach(extraProperties, function addToErrorObject(value, key) {
+      error[key] = value;
+    });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+AlgoliaSearch.prototype.disableSecuredAPIKey = notImplemented;
+AlgoliaSearch.prototype.generateSecuredApiKey = notImplemented;
+
+function notImplemented() {
+  var message = 'Not implemented in this environment.\n' +
+    'If you feel this is a mistake, write to support@algolia.com';
+
+  throw new errors.<span class="apidocCodeKeywordSpan">AlgoliaSearchError</span>(message);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.JSONPScriptError" id="apidoc.element.algoliasearch.errors.JSONPScriptError">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>JSONPScriptError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.JSONPScriptFail" id="apidoc.element.algoliasearch.errors.JSONPScriptFail">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>JSONPScriptFail
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.Network" id="apidoc.element.algoliasearch.errors.Network">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>Network
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.RequestTimeout" id="apidoc.element.algoliasearch.errors.RequestTimeout">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>RequestTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.Unknown" id="apidoc.element.algoliasearch.errors.Unknown">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>Unknown
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  url: reqOpts.url,
+  startTime: startTime,
+  endTime: endTime,
+  duration: endTime - startTime
+});
+
+if (!(err instanceof errors.AlgoliaSearchError)) {
+  err = new errors.<span class="apidocCodeKeywordSpan">Unknown</span>(err &amp;&amp; err.message, err);
+}
+
+tries += 1;
+
+// stop the request implementation when:
+if (
+  // we did not generate this error,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.errors.UnparsableJSON" id="apidoc.element.algoliasearch.errors.UnparsableJSON">
+        function <span class="apidocSignatureSpan">algoliasearch.errors.</span>UnparsableJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function AlgoliaSearchCustomError() {
+  var args = Array.prototype.slice.call(arguments, 0);
+
+  // custom message not set, use default
+  if (typeof args[0] !== 'string') {
+    args.unshift(message);
+  }
+
+  AlgoliaSearchError.apply(this, args);
+  this.name = 'AlgoliaSearch' + name + 'Error';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.lite" id="apidoc.module.algoliasearch.lite">module algoliasearch.lite</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.lite.lite" id="apidoc.element.algoliasearch.lite.lite">
+        function <span class="apidocSignatureSpan">algoliasearch.</span>lite
+        <span class="apidocSignatureSpan">(applicationID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function algoliasearch(applicationID, apiKey, opts) {
+  var cloneDeep = require('../../clone.js');
+  var reduce = require('reduce');
+
+  if (!opts) {
+    opts = {};
+  }
+
+  var httpAgent = opts.httpAgent;
+
+  opts = cloneDeep(reduce(opts, allButHttpAgent, {}));
+
+  // as an httpAgent is an object with methods etc, we take a reference to
+  // it rather than cloning it like other values
+  function allButHttpAgent(filteredOpts, val, keyName) {
+    if (keyName !== 'httpAgent') {
+      filteredOpts[keyName] = val;
+    }
+
+    return filteredOpts;
+  }
+
+  opts.httpAgent = httpAgent;
+
+  opts.timeouts = opts.timeouts || {
+    connect: 2 * 1000,
+    read: 5 * 1000,
+    write: 30 * 1000
+  };
+
+  if (opts.protocol === undefined) {
+    opts.protocol = 'https:';
+  }
+
+  opts._ua = opts._ua || algoliasearch.ua;
+  opts._useCache = false;
+
+  return new AlgoliaSearchNodeJS(applicationID, apiKey, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.lite.initPlaces" id="apidoc.element.algoliasearch.lite.initPlaces">
+        function <span class="apidocSignatureSpan">algoliasearch.lite.</span>initPlaces
+        <span class="apidocSignatureSpan">(appID, apiKey, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function places(appID, apiKey, opts) {
+  var cloneDeep = require('./clone.js');
+
+  opts = opts &amp;&amp; cloneDeep(opts) || {};
+  opts.hosts = opts.hosts || [
+    'places-dsn.algolia.net',
+    'places-1.algolianet.com',
+    'places-2.algolianet.com',
+    'places-3.algolianet.com'
+  ];
+
+  // allow initPlaces() no arguments =&gt; community rate limited
+  if (arguments.length === 0 || typeof appID === 'object' || appID === undefined) {
+    appID = '';
+    apiKey = '';
+    opts._allowEmptyCredentials = true;
+  }
+
+  var client = algoliasearch(appID, apiKey, opts);
+  var index = client.initIndex('places');
+  index.search = buildSearchMethod('query', '/1/places/query');
+  return index;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.algoliasearch.store" id="apidoc.module.algoliasearch.store">module algoliasearch.store</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.store.get" id="apidoc.element.algoliasearch.store.get">
+        function <span class="apidocSignatureSpan">algoliasearch.store.</span>get
+        <span class="apidocSignatureSpan">(key, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getOrSet(key, data) {
+  if (arguments.length === 1) {
+    return store.get(key);
+  }
+
+  return store.set(key, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Object} timeouts
+*/
+AlgoliaSearchCore.prototype.getTimeouts = function() {
+return this._timeouts;
+};
+
+AlgoliaSearchCore.prototype._getAppIdData = function() {
+var data = store.<span class="apidocCodeKeywordSpan">get</span>(this.applicationID);
+if (data !== null) this._cacheAppIdData(data);
+return data;
+};
+
+AlgoliaSearchCore.prototype._setAppIdData = function(data) {
+data.lastChange = (new Date()).getTime();
+this._cacheAppIdData(data);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.store.set" id="apidoc.element.algoliasearch.store.set">
+        function <span class="apidocSignatureSpan">algoliasearch.store.</span>set
+        <span class="apidocSignatureSpan">(key, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getOrSet(key, data) {
+  if (arguments.length === 1) {
+    return store.get(key);
+  }
+
+  return store.set(key, data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (data !== null) this._cacheAppIdData(data);
+return data;
+};
+
+AlgoliaSearchCore.prototype._setAppIdData = function(data) {
+data.lastChange = (new Date()).getTime();
+this._cacheAppIdData(data);
+return store.<span class="apidocCodeKeywordSpan">set</span>(this.applicationID, data);
+};
+
+AlgoliaSearchCore.prototype._checkAppIdData = function() {
+var data = this._getAppIdData();
+var now = (new Date()).getTime();
+if (data === null || now - data.lastChange &gt; RESET_APP_DATA_TIMER) {
+  return this._resetInitialAppIdData(data);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.algoliasearch.store.supportsLocalStorage" id="apidoc.element.algoliasearch.store.supportsLocalStorage">
+        function <span class="apidocSignatureSpan">algoliasearch.store.</span>supportsLocalStorage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function supportsLocalStorage() {
+  try {
+    if ('localStorage' in global &amp;&amp;
+      global.localStorage !== null) {
+      if (!global.localStorage[localStorageNamespace]) {
+        // actual creation of the namespace
+        global.localStorage.setItem(localStorageNamespace, JSON.stringify({}));
+      }
+      return true;
+    }
+
+    return false;
+  } catch (_) {
+    return false;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
